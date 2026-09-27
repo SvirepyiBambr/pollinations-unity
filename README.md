@@ -45,6 +45,19 @@ See `Samples~/SampleNPC` for a ready NPC dialogue component: give it a
 `persona`, call `Say(playerLine, onReply)` from your interaction system,
 and it keeps a rolling conversation memory per NPC.
 
+## How players use their own Pollen (BYOP)
+
+The billed account is whichever key the game presents, so never bundle a
+shared secret key:
+
+- **Development**: the author's own `sk_` key from
+  <https://enter.pollinations.ai/keys>.
+- **Shipped games**: let each player paste **their own** key in your
+  settings UI (device-flow handshake per
+  [BRING_YOUR_OWN_POLLEN](https://github.com/pollinations/pollinations/blob/main/BRING_YOUR_OWN_POLLEN.md#%EF%B8%8F-clis--headless-apps-device-flow)
+  — open the auth URL, player approves, key goes into player prefs —
+  is the no-embedding option the quest points to).
+
 ## Models
 
 Every method takes an optional model override; defaults are configured in
