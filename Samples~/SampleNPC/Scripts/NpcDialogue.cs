@@ -26,8 +26,9 @@ namespace Pollinations.Samples
             history.Add(ChatMessage.User(playerLine));
             string system = persona +
                 " Reply in one or two short sentences, stay in character.";
-            string reply = await PollinationsClient.ChatAsync(
-                new List<ChatMessage>(history), system: system);
+            var context = new List<ChatMessage> { ChatMessage.System(system) };
+            context.AddRange(history);
+            string reply = await PollinationsClient.ChatAsync(context);
             history.Add(ChatMessage.Assistant(reply));
             while (history.Count > memorySize)
             {

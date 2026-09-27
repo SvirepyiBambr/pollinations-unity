@@ -26,6 +26,26 @@ namespace UnityEngine
 
     public class Coroutine { }
 
+    public struct Rect
+    {
+        public Rect(float x, float y, float width, float height) { }
+    }
+
+    public static class GUI
+    {
+        public static bool Button(Rect position, string text) => false;
+    }
+
+    public static class Debug
+    {
+        public static void Log(object message) { }
+    }
+
+    public class TooltipAttribute : Attribute
+    {
+        public TooltipAttribute(string text) { }
+    }
+
     [Serializable]
     public class ScriptableObject : Object
     {

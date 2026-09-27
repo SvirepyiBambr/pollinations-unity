@@ -40,13 +40,13 @@ namespace Pollinations
         public string content;
 
         public static ChatMessage User(string content) =>
-            new ChatMessage { role = "user", content };
+            new ChatMessage { role = "user", content = content };
 
         public static ChatMessage System(string content) =>
-            new ChatMessage { role = "system", content };
+            new ChatMessage { role = "system", content = content };
 
         public static ChatMessage Assistant(string content) =>
-            new ChatMessage { role = "assistant", content };
+            new ChatMessage { role = "assistant", content = content };
     }
 
     /// <summary>
@@ -216,7 +216,7 @@ namespace Pollinations
 
         private static void ThrowIfFailed(UnityWebRequest request)
         {
-            if (request.result == UnityWebRequest.Result.ConnectionError)
+            if (request.result == UnityWebRequestResult.ConnectionError)
             {
                 throw new PollinationsException(request.error);
             }
