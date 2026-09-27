@@ -1,0 +1,20 @@
+{
+    "name": "ai.pollinations.unity",
+    "displayName": "Pollinations",
+    "version": "1.0.0",
+    "unity": "2021.3",
+    "description": "Generate text, images and speech in your Unity game with the player's own Pollinations account (BYOP).",
+    "author": {
+        "name": "SvirepyiBambr",
+        "url": "https://github.com/SvirepyiBambr"
+    },
+    "keywords": ["pollinations", "ai", "llm", "text-generation", "image-generation", "tts"],
+    "license": "MIT",
+    "samples": [
+        {
+            "displayName": "NPC Dialogue sample",
+            "description": "Talk to an NPC with Pollinations text generation (see Samples~/SampleNPC).",
+            "path": "Samples~/SampleNPC"
+        }
+    ]
+}

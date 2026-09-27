@@ -1,0 +1,24 @@
+name: CI
+
+# Syntax- and semantics-checks the runtime with Mono's mcs against
+# minimal UnityEngine stubs (Stubs~ is hidden from Unity). The package
+# itself needs no third-party dependencies, so a clean mcs compile of
+# Runtime/*.cs + Stubs~/*.cs verifies the code paths.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Compile runtime against engine stubs
+        run: |
+          mcs -target:library -out:/tmp/pollinations-check.dll \
+            -r:System.dll \
+            Runtime/*.cs 'Stubs~/UnityEngineStubs.cs' \
+            'Samples~/SampleNPC/Scripts/NpcDialogue.cs'
+          echo "compile OK"
