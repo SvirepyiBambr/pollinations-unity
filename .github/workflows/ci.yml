@@ -15,6 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Install Mono (mcs)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq mono-mcs
+
       - name: Compile runtime against engine stubs
         run: |
           mcs -target:library -out:/tmp/pollinations-check.dll \
