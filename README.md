@@ -99,3 +99,9 @@ Mono's `mcs` against minimal UnityEngine stubs (kept in a hidden
 ## License
 
 MIT
+
+## Live demo
+
+![Live API check](demo/live-run.png)
+
+Real run (2026-09-29) of `PollinationsClient.ChatAsync()` (`POST /v1/chat/completions`) and `GenerateImageAsync()` (`POST /v1/images/generations`) against `gen.pollinations.ai` — HTTP 200, text reply and image URL shown in the transcript.
